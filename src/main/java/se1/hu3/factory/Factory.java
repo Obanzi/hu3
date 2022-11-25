@@ -2,8 +2,15 @@ package se1.hu3.factory;
 
 public class Factory {
 
-    public Monitor getMonitor(int bildWiederholfrequenz, double groesze, int xDots, int yDots) {
+    public Monitor getMonitor(int bildWiederholfrequenz, double groesze, int xDots, int yDots) throws IllegalArgumentException {
 
+        /**
+         * @param bildWiederholfrequenz fuer die Bildwiederholfrequenz
+         * @param groesze fuer die Groesze
+         * @param xDots fuer die horizontalen Auflösungspunkte
+         * @param yDots fuer die vertikalen Auflösungspunkte
+         * @return Monitor
+         */
         if (isGamingMonitor(bildWiederholfrequenz, groesze, xDots, yDots)) {
             return new GamingMonitor(bildWiederholfrequenz, groesze, xDots, yDots);
         } else if (isOfficeMonitor(bildWiederholfrequenz, groesze, xDots, yDots)) {
@@ -11,7 +18,7 @@ public class Factory {
         } else if (isArtAndDesignMonitor(bildWiederholfrequenz, groesze, xDots, yDots)) {
             return new DesignAndArtMonitor(bildWiederholfrequenz, groesze, xDots, yDots);
         }
-        return null;
+        throw new IllegalArgumentException("Kein Monitor gefunden, Falsche Eingabe Argumente");
     }
 
     private boolean isOfficeMonitor(
