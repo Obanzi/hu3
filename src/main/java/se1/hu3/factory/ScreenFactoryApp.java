@@ -13,11 +13,12 @@ public class ScreenFactoryApp {
             System.out.println("Monitor 2 " + monitor2.getMonitorTyp());
             System.out.println("Monitor 3 " + monitor3.getMonitorTyp());
 
+            // Try to create a monitor with wrong parameters
             try {
                 Monitor monitor4 = screenFactory.getMonitor(405, 27.0, 1920, 1200);
                 System.out.println("Monitor 4 " + monitor4.getMonitorTyp());
             } catch (IllegalArgumentException e) {
                 System.out.println("Monitor 4 " + e.getMessage());
-            }
-    }
-}
+            } // end try-catch
+    } // end of main
+} // end of class
