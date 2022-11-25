@@ -21,6 +21,9 @@ public class Factory {
         throw new IllegalArgumentException("Kein Monitor gefunden, Falsche Eingabe Argumente");
     }
 
+    /**
+     * @return boolean if it is a GamingMonitor
+     */
     private boolean isOfficeMonitor(
             int imageRepetitionFrequency,
             double screenDiagonal, int resolutionX, int resolutionY) {
@@ -34,6 +37,10 @@ public class Factory {
                 && resolutionY <= 1200;
     }
 
+    /**
+     * @return boolean if it is a GamingMonitor
+     */
+
     private boolean isGamingMonitor(
             int imageRepetitionFrequency, double screenDiagonal, int resolutionX, int resolutionY) {
         return imageRepetitionFrequency >= 75
@@ -46,6 +53,9 @@ public class Factory {
                 && resolutionY <= 1440;
     }
 
+    /**
+     * @return boolean if it is a ArtAndDesignMonitor
+     */
     private boolean isArtAndDesignMonitor(
             int imageRepetitionFrequency, double screenDiagonal, int resolutionX, int resolutionY) {
         return imageRepetitionFrequency >= 55
