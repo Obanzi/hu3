@@ -72,5 +72,5 @@ public class Factory {
                 && resolutionX <= 3840
                 && resolutionY >= 1200
                 && resolutionY <= 2160;
-    }
-}
+    } // end of isArtAndDesignMonitor
+} // end of class Factory
